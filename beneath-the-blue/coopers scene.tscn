@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvsp0imi5a3ge"]
+
+[ext_resource type="Shader" uid="uid://fe5lajmfdjc6" path="res://water.gdshader" id="1_t2rs0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t2rs0"]
+render_priority = 1
+shader = ExtResource("1_t2rs0")
+shader_parameter/albedo = Color(0, 0.5764706, 1, 0.8392157)
+shader_parameter/albedo_texture_size = Vector2i(0, 0)
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.6650000315875
+shader_parameter/metallic_texture_channel = Vector4(1, 0, 0, 0)
+shader_parameter/specular = 1.0
+shader_parameter/metallic = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(1, 1, 1)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/waveHeightMultiplier = 1.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_1xhi0"]
+lightmap_size_hint = Vector2i(502, 502)
+material = SubResource("ShaderMaterial_t2rs0")
+size = Vector2(100, 100)
+subdivide_width = 100
+subdivide_depth = 100
+
+[sub_resource type="Environment" id="Environment_t2rs0"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_1xhi0")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.805887, 0.59206945, 0, -0.59206945, 0.805887, 0, 1.1390966, 1.5258485)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_t2rs0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.5617802, 0.82728654, 0, -0.82728654, -0.5617802, 0, 26.415377, -38.553047)
+shadow_enabled = true
