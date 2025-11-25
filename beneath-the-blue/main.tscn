@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://i60bx1hug1mj"]
+
+[ext_resource type="PackedScene" uid="uid://bsxoapx446ag3" path="res://gordans_scene.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://bvsp0imi5a3ge" path="res://coopers scene.tscn" id="2_0xm2m"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Gordans scene" parent="." instance=ExtResource("1_ig7tw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.20391464, 0, -0.18444395)
+
+[node name="Node3D" parent="." instance=ExtResource("2_0xm2m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.57531893, -1.0239296, -1.7004709)
